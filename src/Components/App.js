@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Navbar from "./Navbar";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -9,20 +10,8 @@ function App() {
   };
 
   return (
-    <div className={`App ${darkMode ? "App-Midnight" : "App-Sunshine"}`}>
-      <nav className="navbar">
-        <ul>
-          <li>Home</li>
-          <li>Projects</li>
-          <li onClick={modeHandler}>
-            {darkMode ? (
-              <span class="material-icons">light_mode</span>
-            ) : (
-              <span class="material-icons ">dark_mode</span>
-            )}
-          </li>
-        </ul>
-      </nav>
+    <div className={`App ${darkMode ? "App-midnight" : "App-sunshine"}`}>
+      <Navbar darkMode={darkMode} modeHandler={modeHandler} />
     </div>
   );
 }
