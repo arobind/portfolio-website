@@ -6,7 +6,7 @@ function IntroText(props) {
     let newRef = useRef();
     useEffect(()=>{
     var typed = new Typed(newRef.current, {
-        strings: ["Namaste!!", "My Name is Arobind Maharana", "I am a frontend Developer"],
+        strings: ["Namaste!!", "My Name is <b>Arobind Maharana</b>", "I am a Frontend Developer"],
         typeSpeed: 60,
         contentType: 'html',
         fadeOut: true,
