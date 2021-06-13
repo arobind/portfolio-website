@@ -29,6 +29,11 @@
     border-radius: 1rem;
     
   }
+
+  .navbar ul li a {
+    color: inherit;
+  }
+  
   .navbar ul li:hover {
    background-color: rgba(0,0,0,0.1);
     

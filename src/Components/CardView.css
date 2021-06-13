@@ -9,7 +9,8 @@
     margin: auto;
     padding: 2rem;
     margin-top: 5rem;
-    min-width: 640px;
+    min-width: 680px;
+    overflow: auto;
     animation: fadeIn 3s;
 }
 
@@ -28,7 +29,7 @@
 .card-content {
     display: grid;
     grid-template-rows: 75% 25%;
-    gap: 2rem;
+    gap: 1rem;
 }  
 
 
@@ -70,5 +71,42 @@
     text-align: center;
 }
 
+@media only screen and (max-width: 786px) {
+    .card {
+        width: 100%;
+        min-width: auto;
+        padding: 1rem;
+        margin-top: 2rem;
+
+  }
+  .card-content {
+    display: grid;
+    grid-template-rows: 20rem 6rem;
+    gap: 1rem;
+    padding-bottom: 0;
+}  
+  
+  .card-intro {
+    grid-template-columns: none;
+    grid-template-rows: 40% 60%;
+    text-align: center;
+    /* gap: 5%; */
+}
+
+.card-img {
+    max-width: -webkit-fill-available;
+    border-radius: 50%;
+    height: 100%;
+}
+.card-header {
+    padding: 0;
+}
+.card-mainheader {
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+}
+  
 
 

@@ -6,6 +6,8 @@
   padding: 1rem;
   font-family: 'Zilla Slab', serif;
   transition: 1000ms;
+  overflow: auto;
+  
   /* display: inline-flex; */
 }
 
@@ -31,6 +33,7 @@ background: linear-gradient(to bottom, #D4D3DD, #EFEFBB); /* W3C, IE 10+/ Edge, 
 @media only screen and (max-width: 786px) {
   .App {
     font-size: 1.5rem;
+    max-height: 200vh;
     /* padding: 0; */
   }
 }

@@ -1,10 +1,14 @@
 import "./CardView.css";
 import image from "../Assets/Capture_square.jpg";
 
+import IntroText from "./IntroText";
+import './IntroText.css';
 function CardView(props) {
 
   return (
-    <div className={`card ${props.darkMode ? "card-midnight" : "card-sunshine"}`}>
+    <>
+    {(props.introMode) && <IntroText setIntro = {props.setIntroMode} />}
+    {(!props.introMode) && <div className={`card ${props.darkMode ? "card-midnight" : "card-sunshine"}`}>
       <div className="card-content">
         <div className="card-intro">
           <div className="card-image-container">
@@ -23,10 +27,14 @@ function CardView(props) {
         <div className="card-summary">
           <span >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+             
           </span>
         </div>
       </div>
-    </div>
+    </div>}
+    </>
   );
 }
 

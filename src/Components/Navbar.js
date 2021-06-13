@@ -5,8 +5,8 @@ function Navbar(props){
     return(
         <nav className="navbar">
         <ul>
-          {!props.introMode && <li>Home</li>}
-          {!props.introMode && <li>Projects</li>}
+          {!props.introMode && <li><a href="/home">Home</a> </li>}
+          {!props.introMode && <li><a href="/projects">Projects</a> </li>}
           <li onClick={props.modeHandler}>
             {props.darkMode ? (
               <span className="material-icons">light_mode</span>

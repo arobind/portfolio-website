@@ -9,7 +9,7 @@ function IntroText(props) {
         strings: ["Namaste!!", "My Name is <b>Arobind Maharana</b>", "I am a Frontend Developer"],
         typeSpeed: 60,
         contentType: 'html',
-        fadeOut: true,
+        // fadeOut: true,
         fadeOutClass: 'typed-fade-out',
         fadeOutDelay: 500,
         onDestroy: ()=>{
@@ -17,7 +17,7 @@ function IntroText(props) {
         },
         onComplete: ()=>{ 
           document.querySelector(".typed-cursor").remove();
-          setTimeout(()=> props.setIntro(false),1000) }
+          setTimeout(()=>{ props.setIntro(false); sessionStorage.setItem('flag', true)},1000) }
         
       });
     },[]);
