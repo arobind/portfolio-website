@@ -1,35 +1,43 @@
 import { useState } from "react";
-import "./App.css";
+import { 
+  Redirect, 
+  Route, 
+  Switch, 
+  withRouter 
+} from "react-router-dom";
+
+// component imports
 import CardView from "./CardView";
 import Navbar from "./Navbar";
 import Projects from "./Projects";
-import { Route, Switch } from "react-router-dom";
 
-function App() {
+// asset imports
+import "./App.css";
+
+const App = props => {
   const [darkMode, setDarkMode] = useState(false);
   const [introMode, setIntroMode] = useState(!sessionStorage.getItem('flag'));
   
   console.log(sessionStorage.getItem('flag'));
   const modeHandler = () => {
-    setDarkMode((prev) => !prev);
+    setDarkMode(prevDarkMode => !prevDarkMode);
   };
-  
-  
-  return (
-    <div className={`App ${darkMode ? "App-midnight" : "App-sunshine"}`}>
-      <Navbar darkMode={darkMode} modeHandler={modeHandler} introMode = {introMode}/>
-      
+
+  const component = props.location.pathname !== '/portfolio-website' ? (
+    <div className={`App App-${darkMode ? 'midnight' : 'sunshine'}`}>
+      <Navbar darkMode={darkMode} modeHandler={modeHandler} introMode={introMode}/>
       <Switch>
         <Route exact path="/projects">
-          <Projects setIntroMode = {setIntroMode} />
+          <Projects setIntroMode={setIntroMode} />
         </Route>
         <Route path="*">
-          <CardView darkMode={darkMode} introMode ={introMode} setIntroMode = {setIntroMode}/>
-        </Route> 
+          <CardView darkMode={darkMode} introMode={introMode} setIntroMode={setIntroMode}/>
+        </Route>
       </Switch>
-      
     </div>
-  );
+  ) : <Redirect to="/" />;
+  
+  return component;
 }
 
-export default App;
+export default withRouter(App);
