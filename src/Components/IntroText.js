@@ -1,33 +1,46 @@
-import { useEffect, useRef } from "react";
-import Typed from "typed.js";
+import React from 'react';
+
+// component imports
+import Typed from 'typed.js';
+
+// asset imports
 import './IntroText.css';
 
-function IntroText(props) {
-    let newRef = useRef();
-    useEffect(()=>{
-    var typed = new Typed(newRef.current, {
-        strings: ["Namaste!!", "My Name is <b>Arobind Maharana</b>", "I am a Frontend Developer"],
+export const IntroText = ({ setIntro }) => {
+  const newRef = React.useRef();
+  
+  const strings = [
+    'Hello 👋 &amp; Namaste 🙏', 
+    'My name is <strong>Arobind Maharana</strong>.', 
+    'I\'m a Frontend Developer.'
+  ];
+
+  React.useEffect(() => {
+    // iife used instead of assignment since the assignment is not being called anywhere.
+    (() => (
+      new Typed(newRef.current, {
+        strings,
         typeSpeed: 60,
         contentType: 'html',
-        // fadeOut: true,
         fadeOutClass: 'typed-fade-out',
         fadeOutDelay: 500,
-        onDestroy: ()=>{
-          console.log("Finished Typing")
-        },
-        onComplete: ()=>{ 
-          document.querySelector(".typed-cursor").remove();
-          setTimeout(()=>{ props.setIntro(false); sessionStorage.setItem('flag', true)},1000) }
-        
-      });
-    },[]);
+        onDestroy: () => console.log('Finished Typing'),
+        onComplete: () => { 
+          document.querySelector('.typed-cursor').remove();
+          setTimeout(() => {
+            setIntro(false);
+            sessionStorage.setItem('flag', true)
+          }, 1000);
+        }
+      })
+    ))();
+  }, []);
 
-    return(
-        <div className="App-introtext-container">
-            <span className="App-IntroText" ref= {newRef}></span> 
-         </div> 
-        
-    )
+  return (
+    <div className="App-introtext-container">
+      <span className="App-IntroText" ref={newRef} />
+    </div>
+  );
 };
 
 export default IntroText;
