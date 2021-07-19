@@ -15,9 +15,9 @@
   } 
   
   .navbar ul :last-child {
-    
     display: inline-flex;
     margin-left: auto;
+    cursor: pointer;
   }
   
   .navbar ul li {
