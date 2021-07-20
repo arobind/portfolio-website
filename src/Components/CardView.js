@@ -26,10 +26,8 @@ function CardView(props) {
         </div>
         <div className="card-summary">
           <span >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-             
+            Hi, I'm a passionate Frontend Developer with more than 3 years of experience building experiences for the User on the Web. I'm highly skilled in JavaScript & React.
+            Apart from that, I can always be be found on my couch lazing around, writing code, sipping coffee, eating shawarma!
           </span>
         </div>
       </div>
