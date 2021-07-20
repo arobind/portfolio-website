@@ -23,7 +23,7 @@ const App = props => {
     setDarkMode(prevDarkMode => !prevDarkMode);
   };
 
-  const component = props.location.pathname !== '/portfolio-website' ? (
+  const component = props.location.pathname.includes('portfolio-website') ? (
     <div className={`App App-${darkMode ? 'midnight' : 'sunshine'}`}>
       <Navbar darkMode={darkMode} modeHandler={modeHandler} introMode={introMode}/>
       <Switch>
