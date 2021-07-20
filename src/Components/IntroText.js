@@ -1,6 +1,4 @@
 import React from 'react';
-
-// component imports
 import Typed from 'typed.js';
 
 // asset imports
