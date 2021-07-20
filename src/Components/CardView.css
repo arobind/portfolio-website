@@ -63,7 +63,7 @@
 }
 .card-contact > i:hover {
     font-size: 110%;
-    
+    cursor: pointer;
 }
 
 .card-summary {
