@@ -61,7 +61,7 @@
     margin: auto;
     font-size: 2rem;
 }
-.card-contact > i:hover {
+.card-contact *:hover {
     font-size: 110%;
     cursor: pointer;
 }
